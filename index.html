@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Frontend Mentor | NFT preview card component</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/barebones.css" /> -->
+    <style>
+      :root {
+        --font: "Outfit", sans-serif;
+
+        /* Primary color */
+        --pri-soft-blue: hsl(215, 51%, 70%);
+        --pri-cyan: hsl(178, 100%, 50%);
+
+        /* Neutral color */
+        --neu-main-bg: hsl(217, 54%, 11%);
+        --neu-card-bg: hsl(216, 50%, 16%);
+        --neu-line: hsl(215, 32%, 27%);
+
+        /* Text */
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-md: 1rem;
+        --text-lg: 1.5rem;
+
+        --space-sm: 0.5rem;
+        --space-md: 1rem;
+        --space-lg: 2rem;
+
+        --rounded-sm: 8px;
+        --rounded: 16px;
+
+        --shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font);
+
+        background-color: var(--neu-main-bg);
+        padding: 20px;
+      }
+
+      main {
+        border-radius: var(--rounded);
+        padding: var(--space-lg);
+        width: 100%;
+        max-width: 300px;
+        background-color: var(--neu-card-bg);
+      }
+      .photo {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--rounded-sm);
+      }
+
+      .photo:hover {
+        cursor: pointer;
+        background-color: violet;
+        opacity: 0.5;
+      }
+
+      .headline {
+        color: white;
+        font-size: var(--text-lg);
+      }
+      .headline:hover {
+        color: var(--pri-cyan);
+        cursor: pointer;
+      }
+
+      .desc,
+      .timeleft,
+      .creator {
+        color: var(--pri-soft-blue);
+      }
+      .price {
+        position: relative;
+        float: left;
+
+        color: var(--pri-cyan);
+        margin-bottom: var(--space-sm);
+      }
+      .price::before {
+        content: url("images/icon-ethereum.svg");
+        vertical-align: middle;
+        margin-right: var(--text-xs);
+      }
+
+      .timeleft {
+        position: relative;
+        float: right;
+        margin-bottom: var(--space-sm);
+      }
+      .timeleft::before {
+        content: url("images/icon-clock.svg");
+        vertical-align: middle;
+        margin-right: var(--text-xs);
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid var(--pri-soft-blue);
+        opacity: 50%;
+        margin-bottom: var(--space-md);
+      }
+      .creator {
+        display: flex;
+        align-items: center;
+      }
+      .creator--photo {
+        max-width: 100%;
+        width: 40px;
+        height: auto;
+        margin-right: var(--space-md);
+        border: 1.5px solid white;
+        border-radius: 50%;
+      }
+      .creator--name::after {
+        content: "Jules Wyvern";
+        color: white;
+      }
+
+      footer {
+        text-align: center;
+      }
+
+      /* super small screen */
+      @media screen and (max-width: 290px) {
+        .timeleft {
+          float: left;
+        }
+      }
+    </style>
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+  </head>
+  <body>
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <main>
+      <img class="photo" src="images/image-equilibrium.jpg" alt="Equilibrium" />
+      <h1 class="headline">Equilibrium #3429</h1>
+      <p class="desc">Our Equilibrium collection promotes balance and calm.</p>
+      <div class="clearfix">
+        <p class="price">0.041 ETH</p>
+
+        <p class="timeleft">3 days left</p>
+      </div>
+
+      <hr />
+      <div class="creator">
+        <img
+          class="creator--photo"
+          src="images/image-avatar.png"
+          alt="Jules Wyvern"
+        />
+        <span class="creator--name">Creation of </span>
+      </div>
+    </main>
+
+    <!-- <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/ob2code">ob2code</a>.
+      </div>
+    </footer> -->
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>
